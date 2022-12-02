@@ -11,6 +11,8 @@ pub enum Answer {
     Str(String),
 }
 
+pub type AnsPair = (Answer, Answer);
+
 impl Display for Answer {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         match self {
