@@ -1,26 +1,27 @@
-use std::fs::File;
-use std::io::prelude::*;
-use std::io::BufReader;
+mod days;
+mod utils;
+
+use utils::answer::Answer;
+use days::*;
+use std::env;
 
 fn main() {
-    let file = File::open("input.txt");
+    let args = env::args().collect::<Vec<String>>();
 
-    let reader = BufReader::new(file.unwrap());
-
-    let mut cur = 0;
-    let mut max = 0;
-
-    for line in reader.lines() {
-        let line = line.unwrap();
-        if line.is_empty() {
-            if cur > max {
-                max = cur;
-            }
-            cur = 0;
-        } else {
-            cur += line.parse::<i32>().unwrap();
-        }
+    if args.len() < 2 {
+        panic!("Usage: cargo run <day>");
     }
 
-    println!("{}", max);
+    let day = args[1].parse::<u8>().unwrap();
+
+    let ans = solver(day);
+
+    println!("{}", ans());
+}
+
+fn solver(day: u8) -> fn() -> Answer {
+    match day {
+        1 => day1::solve,
+        _ => todo!(),
+    }
 }
