@@ -1,10 +1,10 @@
 mod days;
 mod utils;
 
-use utils::answer::Answer;
+use crate::utils::answer::AnsPair;
 use days::*;
 use std::env;
-use crate::utils::answer::AnsPair;
+use utils::answer::Answer;
 
 fn main() {
     let args = env::args().collect::<Vec<String>>();
@@ -26,6 +26,7 @@ fn solver(day: u8) -> fn() -> AnsPair {
         1 => day1::solve,
         2 => day2::solve,
         3 => day3::solve,
+        4 => day4::solve,
         _ => todo!(),
     }
 }

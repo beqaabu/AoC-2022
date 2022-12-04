@@ -1,8 +1,8 @@
+use crate::utils::answer::AnsPair;
+use crate::utils::Answer;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
-use crate::utils::Answer;
-use crate::utils::answer::AnsPair;
 
 pub fn solve() -> AnsPair {
     let file = File::open("inputs/day1.txt");
@@ -27,6 +27,7 @@ pub fn solve() -> AnsPair {
     }
 
     calories.sort();
-    let ans = calories[calories.len() - 1] + calories[calories.len() - 2] + calories[calories.len() - 3];
+    let ans =
+        calories[calories.len() - 1] + calories[calories.len() - 2] + calories[calories.len() - 3];
     (Answer::I32(max), Answer::I32(ans))
 }

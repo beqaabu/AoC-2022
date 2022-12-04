@@ -1,10 +1,10 @@
 use crate::utils::Answer;
 
+use crate::utils::answer::AnsPair;
+use std::collections::HashMap;
 use std::fs::File;
 use std::io::prelude::*;
 use std::io::BufReader;
-use crate::utils::answer::AnsPair;
-use std::collections::HashMap;
 
 pub fn solve() -> AnsPair {
     let file = File::open("inputs/day2.txt");
