@@ -4,7 +4,6 @@ mod utils;
 use crate::utils::answer::AnsPair;
 use days::*;
 use std::env;
-use utils::answer::Answer;
 
 fn main() {
     let args = env::args().collect::<Vec<String>>();
