@@ -25,6 +25,7 @@ fn solver(day: u8) -> fn() -> AnsPair {
     match day {
         1 => day1::solve,
         2 => day2::solve,
+        3 => day3::solve,
         _ => todo!(),
     }
 }
